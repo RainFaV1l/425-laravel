@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
     <script src="{{ asset('public/assets/js/script.js') }}" defer></script>
     @vite('resources/css/app.css')
+{{--    <link rel="stylesheet" href="{{ asset('public/build/assets/app-DW9Qn3ri.css') }}">--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
