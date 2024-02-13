@@ -17,6 +17,6 @@ use \App\Http\Controllers\IndexController;
 //Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
 
 Route::controller(IndexController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/catalog', 'catalog');
+    Route::get('/', 'index')->name('index.index');
+    Route::get('/catalog', 'catalog')->name('index.catalog');
 });

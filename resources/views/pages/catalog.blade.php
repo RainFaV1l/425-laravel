@@ -3,5 +3,9 @@
 @section('title', 'Каталог')
 
 @section('content')
-    <div>Каталог товаров</div>
+    <div>
+        <div class="container">
+
+        </div>
+    </div>
 @endsection
