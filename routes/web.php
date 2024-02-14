@@ -25,4 +25,6 @@ Route::controller(IndexController::class)->group(function () {
 Route::controller(AuthController::class)->group(function () {
     Route::get('/register', 'registerPage')->name('auth.registerPage');
     Route::get('/login', 'loginPage')->name('auth.loginPage');
+    Route::post('/register', 'register')->name('auth.register');
+    Route::post('/login', 'login')->name('auth.login');
 });
