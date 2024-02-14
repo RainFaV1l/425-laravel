@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,11 +21,32 @@ class AuthController extends Controller
 
     }
 
-    public function register() {
+    public function register(RegisterRequest $registerRequest) {
+
+        $data = $registerRequest->validated();
+
+//        $data['password'] = Hash::make($data['password']);
+
+        $user = User::query()->create($data);
+
+        auth()->login($user);
+
+        return redirect()->route('index.index');
+
 
     }
 
-    public function login() {
+    public function login(LoginRequest $loginRequest) {
+
+        $data = $loginRequest->validated();
+
+        if(!auth()->attempt($data)) {
+
+            return back()->withInput()->withErrors(['invalid_credentials' => 'Неверный пароль']);
+
+        }
+
+        return redirect()->route('index.index');
 
     }
 
