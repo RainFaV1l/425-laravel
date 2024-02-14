@@ -7,8 +7,8 @@
             <li><a class="h-5 hover:border-b border-white pb-2 transition" href="#">О нас</a></li>
         </ul>
         <div class="flex flex-wrap items-center gap-7">
-            <a href="#" class="button">Войти</a>
-            <a href="#" class="button-fill">Регистрация</a>
+            <a href="{{ route('auth.loginPage') }}" class="button">Войти</a>
+            <a href="{{ route('auth.registerPage') }}" class="button-fill">Регистрация</a>
         </div>
     </div>
 </header>

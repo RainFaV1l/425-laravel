@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
+use \App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ use \App\Http\Controllers\IndexController;
 Route::controller(IndexController::class)->group(function () {
     Route::get('/', 'index')->name('index.index');
     Route::get('/catalog', 'catalog')->name('index.catalog');
+});
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/register', 'registerPage')->name('auth.registerPage');
+    Route::get('/login', 'loginPage')->name('auth.loginPage');
 });
