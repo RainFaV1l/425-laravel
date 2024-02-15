@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,10 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/register', 'register')->name('auth.register');
     Route::post('/login', 'login')->name('auth.login');
     Route::post('/logout', 'logout')->name('auth.logout');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->group(function () {
+    Route::get('/create', 'create')->name('category.create');
+    Route::post('/', 'store')->name('category.store');
+    Route::delete('/{category}', 'destroy')->name('category.destroy');
 });

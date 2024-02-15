@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -15,6 +16,16 @@ class IndexController extends Controller
     }
 
     public function admin() {
-        return view('pages.admin');
+
+        // $categories = Category::query()->get();
+
+        $categories = Category::all();
+
+        // return view('pages.admin', ['categories' => $categories]);
+
+        // return view('pages.admin', [$categories]);
+
+        return view('pages.admin', compact('categories'));
+
     }
 }
