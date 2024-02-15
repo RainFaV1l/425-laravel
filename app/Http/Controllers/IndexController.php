@@ -13,4 +13,8 @@ class IndexController extends Controller
     public function catalog() {
         return view('pages.catalog');
     }
+
+    public function admin() {
+        return view('pages.admin');
+    }
 }

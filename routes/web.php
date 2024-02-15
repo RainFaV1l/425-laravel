@@ -20,6 +20,7 @@ use \App\Http\Controllers\AuthController;
 Route::controller(IndexController::class)->group(function () {
     Route::get('/', 'index')->name('index.index');
     Route::get('/catalog', 'catalog')->name('index.catalog');
+    Route::get('/admin', 'admin')->name('index.admin');
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -27,4 +28,5 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('auth.loginPage');
     Route::post('/register', 'register')->name('auth.register');
     Route::post('/login', 'login')->name('auth.login');
+    Route::post('/logout', 'logout')->name('auth.logout');
 });

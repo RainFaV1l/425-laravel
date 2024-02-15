@@ -25,7 +25,8 @@ class AuthController extends Controller
 
         $data = $registerRequest->validated();
 
-//        $data['password'] = Hash::make($data['password']);
+        // Если пароль автоматически не хэшируется пропишите это:
+        // $data['password'] = Hash::make($data['password']);
 
         $user = User::query()->create($data);
 
@@ -47,6 +48,14 @@ class AuthController extends Controller
         }
 
         return redirect()->route('index.index');
+
+    }
+
+    public function logout() {
+
+        auth()->logout();
+
+        return redirect()->route('auth.loginPage');
 
     }
 
