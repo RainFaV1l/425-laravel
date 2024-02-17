@@ -17,6 +17,10 @@ class IndexController extends Controller
 
     public function admin() {
 
+//        if(!auth()->user() || auth()->user()->role_id !== 2) {
+//            abort(403);
+//        }
+
         // $categories = Category::query()->get();
 
         $categories = Category::all();

@@ -20,7 +20,7 @@
                                 {{-- @dd($category->name)--}}
                                 <li class="flex items-center gap-4 border border-white transition border-opacity-25 hover:border-opacity-100 py-4 px-6 rounded">
                                     {{ $category->name }}
-                                    <a href="">✍️</a>
+                                    <a href="{{ route('category.edit', $category->id) }}">✍️</a>
                                     <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
