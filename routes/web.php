@@ -45,4 +45,7 @@ Route::controller(CategoryController::class)->prefix('category')->middleware([\A
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
     Route::get('/create', 'create')->name('create');
     Route::post('/', 'store')->name('store');
+    Route::delete('/{product}', 'destroy')->name('destroy');
+    Route::get('/{product}/edit', 'edit')->name('edit');
+    Route::patch('/{product}', 'update')->name('update');
 });
