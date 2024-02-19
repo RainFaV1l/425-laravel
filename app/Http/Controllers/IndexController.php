@@ -14,11 +14,25 @@ class IndexController extends Controller
 
     }
 
-    public function catalog() {
+    public function catalog(Request $request) {
 
         $categories = Category::all();
 
-        return view('pages.catalog', compact('categories'));
+        $data = $request->all();
+
+        if(isset($data['category'])) {
+
+            $category_id = $data['category'];
+
+            $products = Product::query()->where('category_id', $category_id)->get();
+
+        } else {
+
+            $products = Product::all();
+
+        }
+
+        return view('pages.catalog', compact('categories', 'products'));
 
     }
 
