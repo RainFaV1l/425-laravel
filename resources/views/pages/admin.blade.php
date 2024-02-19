@@ -43,16 +43,16 @@
                         @if($products->count() > 0)
                             @foreach($products as $product)
                                 <li class="flex items-center justify-between w-full gap-4 border border-white transition border-opacity-25 hover:border-opacity-100 py-4 px-6 rounded">
-                                    <p class="w-[25%]">{{ $product->name }}</p>
-                                    <p class="w-[25%]">{{ $product->description }}</p>
-                                    <p class="w-[25%]">{{ $product->category->name }}</p>
-                                    <p class="w-[25%]">{{ $product->price }}</p>
-                                    <div class="w-[25%]">
+                                    <p class="w-[20%]">{{ $product->name }}</p>
+                                    <p class="w-[20%]">{{ $product->description }}</p>
+                                    <p class="w-[20%]">{{ $product->category->name }}</p>
+                                    <p class="w-[20%]">{{ $product->price }}</p>
+                                    <div class="w-[10%]">
                                         <div class="h-[70px] w-[70px] border border-white border-opacity-25 rounded">
                                             <img src="{{ $product->getImageUrl() }}" class="h-full w-full object-cover" alt="Изображение">
                                         </div>
                                     </div>
-                                    <div class="flex items-center justify-end gap-7 w-[25%]">
+                                    <div class="flex items-center justify-end gap-7 w-[10%]">
                                         <a href="{{ route('product.edit', $product->id) }}">✍️</a>
                                         <form action="{{ route('product.destroy', $product->id) }}" method="post">
                                             @csrf

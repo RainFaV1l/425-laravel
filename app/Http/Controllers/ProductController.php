@@ -40,9 +40,9 @@ class ProductController extends Controller
 
         $product->delete();
 
-        if(Storage::exists($product->path)) {
-            \Storage::delete($product->path);
-        }
+//        if(Storage::exists($product->path)) {
+//            \Storage::delete($product->path);
+//        }
 
         return redirect()->route('index.admin');
 
@@ -64,9 +64,9 @@ class ProductController extends Controller
 
             $data['path'] = $request->file('path')->store('public/products');
 
-            if(Storage::exists($product->path)) {
-                \Storage::delete($product->path);
-            }
+//            if(Storage::exists($product->path)) {
+//                \Storage::delete($product->path);
+//            }
 
         }
 
